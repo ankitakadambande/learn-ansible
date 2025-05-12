@@ -1,0 +1,29 @@
+
+# A variable is an object that stores data 
+
+# types of variables are as follow 
+# 1. Global variables
+# 2. Local or Task variables 
+# 3. User defined (Taking input from user)
+
+# {{ variable name }} ----- this is a Jinja technique 
+
+
+# below is the example of Global variable 
+- name: Demo on vars 
+  hosts: localhost
+  vars:
+    URL_PLAY: play.example.com
+  tasks:
+    - name: Print variable
+      ansible.builtin.debug:
+        msg: URL_PLAY - {{ URL_PLAY }}  
+
+    - name: Print variable
+      ansible.builtin.debug:
+        msg: URL_PLAY - {{ URL_PLAY }}    
+
+
+
+
+        
