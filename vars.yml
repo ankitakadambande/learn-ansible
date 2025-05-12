@@ -15,14 +15,22 @@
   vars:
     URL_PLAY: This is an example of global variable
   tasks:
-    - name: Print variable
+    - name: Global variable
       ansible.builtin.debug:
         msg: URL_PLAY - {{ URL_PLAY }}  
 
-    - name: Print variable
+    - name: Global variable
       ansible.builtin.debug:
         msg: URL_PLAY - {{ URL_PLAY }}    
 
+# below is the example of local/task variable 
+    - name: Task variable
+      ansible.builtin.debug:
+        msg: URL_Task - {{ URL_Task }}
+      vars:
+        URL_TASK: This is an example of local variable 
 
 
 
+
+        
