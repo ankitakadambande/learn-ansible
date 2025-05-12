@@ -13,7 +13,7 @@
 - name: Demo on vars 
   hosts: localhost
   vars:
-    URL_PLAY: play.example.com
+    URL_PLAY: This is an example of global variable
   tasks:
     - name: Print variable
       ansible.builtin.debug:
@@ -26,4 +26,3 @@
 
 
 
-        
