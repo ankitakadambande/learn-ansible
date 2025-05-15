@@ -25,12 +25,12 @@
 
 # below is the example of local/task variable 
     - name: Task variable
-      vars:
-        URL_TASK: This is an example of local variable 
-      ansible.builtin.debug:
-        msg: URL_Task - {{ URL_Task }}
       #vars:
         #URL_TASK: This is an example of local variable 
+      ansible.builtin.debug:
+        msg: URL_TASK - {{ URL_TASK }}
+      vars:
+        URL_TASK: This is an example of local variable 
 
 
 
