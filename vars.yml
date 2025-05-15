@@ -10,7 +10,7 @@
 
 
 # below is the example of Global variable 
-- name: Demo on vars 
+- name: Demo on Global variables 
   hosts: localhost
   vars:
     URL_PLAY: This is an example of global variable
@@ -23,10 +23,10 @@
       ansible.builtin.debug:
         msg: URL_PLAY - {{ URL_PLAY }}    
 
+
+
 # below is the example of local/task variable 
-    - name: Task variable
-      #vars:
-        #URL_TASK: This is an example of local variable 
+    - name: Demo on Task variable
       ansible.builtin.debug:
         msg: URL_TASK - {{ URL_TASK }}
       vars:
@@ -34,4 +34,17 @@
 
 
 
+# below is the example of user-defined variable by using vars_prompt
+- name: Demo on User-defined variables using vars_prompt 
+  hosts: localhost
+  gather_facts: false
 
+  vars_prompt:
+    - name: user_name
+      prompt: "Please enter your name"
+      private: no   # if private set to "yes", input will be hidden (like password)
+
+  tasks:
+    - name: Show user input
+      ansible.builtin.debug:
+        msg: "Hello, {{ user_name }}! Welcome to Ansible."
