@@ -23,8 +23,8 @@
           msg: "User input: {{ user_input }}"
 
     # Local (task level) variable
-    - name: Use Local Task Level Variable
-      vars:
-        local_var: "This is a local task variable"
-      ansible.builtin.debug:
-        msg: "Task variable: {{ local_var }}"      
+      - name: Use Local Task Level Variable
+        vars:
+          local_var: "This is a local task variable"
+        ansible.builtin.debug:
+          msg: "Task variable: {{ local_var }}"      
