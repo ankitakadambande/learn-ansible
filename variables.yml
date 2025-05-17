@@ -1,3 +1,4 @@
+---
 - name: Demo of Ansible Variable Types 
   hosts: localhost
   gather_facts: false
@@ -5,30 +6,27 @@
 
 # User-defined variable: Prompt at runtime
 vars_prompt:
- - name: user_input
-   prompt: "Enter your favorite DevOps tool"
-   private: no
+  - name: user_input
+    prompt: "Enter your favorite DevOps tool"
+    private: no
 
 
 # Global variable: Defined at play level
 vars: 
- global_var: "This is a Global variable"
+  global_var: "This is a Global variable"
 
 tasks:
- - name: Print Global Variable
-   ansible.builtin.debug:
-    msg: "Global variable: {{ global_var }}"
+  - name: Print Global Variable
+    ansible.builtin.debug:
+      msg: "Global variable: {{ global_var }}"
 
- - name: Print User-defined variable 
-   ansible.builtin.debug:
-    msg: "User input: {{ user_input }}"
+  - name: Print User-defined variable 
+    ansible.builtin.debug:
+      msg: "User input: {{ user_input }}"
 
 # Local (task level) variable 
 - name: Use Local Task Variable 
   vars:
-   local_var: "This is a Local Task variable"
+    local_var: "This is a Local Task variable"
   ansible.builtin.debug:
-   msg: "Task variable: {{ local_var }}" 
-
-
-   
+    msg: "Task variable: {{ local_var }}" 
