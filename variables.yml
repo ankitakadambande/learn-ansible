@@ -28,3 +28,5 @@
           local_var: "This is a local task variable"
         ansible.builtin.debug:
           msg: "Task variable: {{ local_var }}"      
+
+          
