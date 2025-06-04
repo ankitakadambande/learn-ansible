@@ -1,0 +1,11 @@
+- name: Register demo
+  hosts: localhost
+  tasks:
+    - name: register demo
+      ansible.builtin.shell: uptime
+      register: OUTPUT
+
+    - name: Print OUTPUT of previous task
+      ansible.builtin.debug:
+        msg: "{{ OUTPUT.stdout }}"  
+        
