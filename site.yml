@@ -1,0 +1,6 @@
+- name: Master Playbook to call apache_setup role
+  hosts: slaves
+  become: yes
+
+  roles:
+    - roles_assignment
