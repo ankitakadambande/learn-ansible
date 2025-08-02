@@ -1,0 +1,6 @@
+---
+- name: Run date check and install nginx via role
+  hosts: slaves
+  become: yes
+  roles:
+    - nginx_checkdate

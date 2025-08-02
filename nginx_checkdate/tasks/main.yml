@@ -1,0 +1,23 @@
+---
+- name: Check date on slave node
+  ansible.builtin.command:
+    cmd: date
+  register: date_output
+
+- name: Show date result
+  ansible.builtin.debug:
+    msg: "Slave date is {{ date_output.stdout }}"
+
+- name: Install Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Ensure Nginx is running and enabled
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes
+
+# tasks file for nginx_checkdate

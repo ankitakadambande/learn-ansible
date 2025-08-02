@@ -1,2 +1,2 @@
 [slaves] 
-54.209.65.42 ansible_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/keys/Ansible-demo.pem
+3.85.202.205 ansible_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/keys/Ansible-demo.pem

@@ -1,0 +1,4 @@
+#localhost
+
+[slaves]
+52.90.60.246 ansible_user=ubuntu
